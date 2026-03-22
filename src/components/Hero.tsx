@@ -1,4 +1,4 @@
-import { ArrowRight, Zap } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 export default function Hero() {
   return (
@@ -8,12 +8,6 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/5 text-cyan-400 text-sm font-medium mb-8 animate-fade-in-up backdrop-blur-sm">
-          <Zap size={14} className="animate-pulse" />
-          AI-First Technology Company
-        </div>
-
         {/* Main heading — branding image */}
         <div className="flex justify-center mb-6 opacity-0 animate-fade-in-up"
           style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
