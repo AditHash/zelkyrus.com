@@ -6,15 +6,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Brand */}
         <div className="flex items-center gap-3">
-          <div className="relative w-7 h-7">
-            <div className="absolute inset-0 rounded-md bg-gradient-to-br from-cyan-400 to-violet-600 opacity-70" />
-            <div className="absolute inset-[2px] rounded-[4px] bg-[#050508] flex items-center justify-center">
-              <span className="text-[10px] font-black text-gradient">Z</span>
-            </div>
-          </div>
+          <img src="/icon.png" alt="Zelkyrus" className="w-7 h-7 object-contain opacity-80" />
           <div>
-            <div className="text-sm font-bold text-white">Zelkyrus</div>
-            <div className="text-xs text-slate-500">Intelligence, Engineered.</div>
+            <img src="/branding-transparent.png" alt="Zelkyrus" className="h-4 object-contain opacity-70" />
+            <div className="text-xs text-slate-500 mt-0.5">Intelligence, Engineered.</div>
           </div>
         </div>
 

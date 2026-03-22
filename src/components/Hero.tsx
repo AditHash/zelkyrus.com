@@ -14,13 +14,15 @@ export default function Hero() {
           AI-First Technology Company
         </div>
 
-        {/* Main heading */}
-        <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-6 leading-none opacity-0 animate-fade-in-up"
+        {/* Main heading — branding image */}
+        <div className="flex justify-center mb-6 opacity-0 animate-fade-in-up"
           style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
-          <span className="text-white drop-shadow-[0_0_40px_rgba(0,212,255,0.4)]">
-            Zelkyrus
-          </span>
-        </h1>
+          <img
+            src="/branding-transparent.png"
+            alt="Zelkyrus"
+            className="w-auto max-w-[600px] md:max-w-[700px] lg:max-w-[800px] h-auto object-contain drop-shadow-[0_0_60px_rgba(0,212,255,0.35)]"
+          />
+        </div>
 
         <p className="text-xl md:text-2xl font-light text-slate-300 mb-4 opacity-0 animate-fade-in-up"
           style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>

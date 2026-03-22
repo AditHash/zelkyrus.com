@@ -29,15 +29,16 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
-          <div className="relative w-8 h-8">
-            <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-cyan-400 to-violet-600 opacity-80 group-hover:opacity-100 transition-opacity animate-pulse-slow" />
-            <div className="absolute inset-[2px] rounded-[6px] bg-[#050508] flex items-center justify-center">
-              <span className="text-xs font-black text-gradient">Z</span>
-            </div>
-          </div>
-          <span className="font-bold text-lg tracking-tight text-white">
-            Zelkyrus
-          </span>
+          <img
+            src="/icon.png"
+            alt="Zelkyrus"
+            className="w-8 h-8 object-contain group-hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.6)] transition-all duration-300"
+          />
+          <img
+            src="/branding-transparent.png"
+            alt="Zelkyrus"
+            className="h-6 object-contain opacity-90 group-hover:opacity-100 transition-opacity"
+          />
         </a>
 
         {/* Desktop nav */}
