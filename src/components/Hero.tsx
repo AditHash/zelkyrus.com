@@ -14,7 +14,7 @@ export default function Hero() {
           <img
             src="/branding-transparent.png"
             alt="Zelkyrus"
-            className="w-auto max-w-[600px] md:max-w-[700px] lg:max-w-[800px] h-auto object-contain drop-shadow-[0_0_60px_rgba(0,212,255,0.35)]"
+            className="w-full max-w-[480px] sm:max-w-[640px] md:max-w-[820px] lg:max-w-[960px] h-auto object-contain drop-shadow-[0_0_60px_rgba(0,212,255,0.35)]"
           />
         </div>
 

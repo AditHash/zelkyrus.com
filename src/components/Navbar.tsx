@@ -29,16 +29,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
-          <img
-            src="/icon.png"
-            alt="Zelkyrus"
-            className="w-10 h-10 object-contain group-hover:drop-shadow-[0_0_8px_rgba(0,212,255,0.6)] transition-all duration-300"
-          />
-          <img
-            src="/branding-transparent.png"
-            alt="Zelkyrus"
-            className="h-8 object-contain opacity-90 group-hover:opacity-100 transition-opacity"
-          />
+          <div className="relative w-8 h-8 flex-shrink-0">
+            <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-cyan-400 to-violet-600 opacity-80 group-hover:opacity-100 transition-opacity animate-pulse-slow" />
+            <img src="/icon.png" alt="" className="absolute inset-0 w-full h-full object-contain p-1 rounded-lg" />
+          </div>
+          <span className="font-bold text-lg tracking-tight text-white">Zelkyrus</span>
         </a>
 
         {/* Desktop nav */}
