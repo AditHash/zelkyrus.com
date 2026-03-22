@@ -1,114 +1,23 @@
-import { useEffect, useRef } from 'react'
 import { ArrowRight, Zap } from 'lucide-react'
 
 export default function Hero() {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
-
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
-
-    const particles: Array<{
-      x: number; y: number; vx: number; vy: number
-      size: number; opacity: number; color: string
-    }> = []
-
-    const colors = ['#00d4ff', '#7c3aed', '#3b82f6', '#06b6d4']
-    for (let i = 0; i < 80; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        size: Math.random() * 2 + 0.5,
-        opacity: Math.random() * 0.5 + 0.1,
-        color: colors[Math.floor(Math.random() * colors.length)],
-      })
-    }
-
-    let animId: number
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-
-      particles.forEach((p, i) => {
-        p.x += p.vx
-        p.y += p.vy
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1
-
-        // Draw connections
-        particles.forEach((p2, j) => {
-          if (j <= i) return
-          const dx = p.x - p2.x
-          const dy = p.y - p2.y
-          const dist = Math.sqrt(dx * dx + dy * dy)
-          if (dist < 120) {
-            ctx.beginPath()
-            ctx.moveTo(p.x, p.y)
-            ctx.lineTo(p2.x, p2.y)
-            ctx.strokeStyle = `rgba(0, 212, 255, ${0.08 * (1 - dist / 120)})`
-            ctx.lineWidth = 0.5
-            ctx.stroke()
-          }
-        })
-
-        // Draw particle
-        ctx.beginPath()
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
-        ctx.fillStyle = p.color
-        ctx.globalAlpha = p.opacity
-        ctx.fill()
-        ctx.globalAlpha = 1
-      })
-
-      animId = requestAnimationFrame(animate)
-    }
-    animate()
-
-    const handleResize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-    }
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      cancelAnimationFrame(animId)
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden grid-bg">
-      {/* Particle canvas */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 pointer-events-none"
-        style={{ opacity: 0.7 }}
-      />
-
-      {/* Glow orbs */}
-      <div className="orb w-[600px] h-[600px] bg-cyan-500/10 top-[-100px] left-[-200px]" />
-      <div className="orb w-[500px] h-[500px] bg-violet-600/10 bottom-[-100px] right-[-100px]" />
-      <div className="orb w-[300px] h-[300px] bg-blue-500/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+      {/* Subtle dark vignette over aurora so text stays readable */}
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-[#050508]/40 to-[#050508]/80 pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/5 text-cyan-400 text-sm font-medium mb-8 animate-fade-in-up">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-400/20 bg-cyan-400/5 text-cyan-400 text-sm font-medium mb-8 animate-fade-in-up backdrop-blur-sm">
           <Zap size={14} className="animate-pulse" />
           AI-First Technology Company
         </div>
 
         {/* Main heading */}
-        <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-6 leading-none"
-          style={{ animationDelay: '0.1s' }}
-        >
-          <span className="block text-white opacity-0 animate-fade-in-up" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
+        <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-6 leading-none opacity-0 animate-fade-in-up"
+          style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
+          <span className="text-white drop-shadow-[0_0_40px_rgba(0,212,255,0.4)]">
             Zelkyrus
           </span>
         </h1>
@@ -121,7 +30,7 @@ export default function Hero() {
           <span className="text-gradient font-semibold">Infrastructure</span>
         </p>
 
-        <p className="text-base md:text-lg text-slate-500 max-w-2xl mx-auto mb-10 opacity-0 animate-fade-in-up"
+        <p className="text-base md:text-lg text-slate-400 max-w-2xl mx-auto mb-10 opacity-0 animate-fade-in-up"
           style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
           Building intelligent systems that analyze, learn, and optimize complex
           decision-making across domains — powered by multi-agent architectures
@@ -140,7 +49,7 @@ export default function Hero() {
           </a>
           <a
             href="#about"
-            className="px-7 py-3.5 rounded-xl font-semibold text-sm border border-white/10 text-slate-300 hover:border-white/20 hover:text-white transition-all duration-200 glass"
+            className="px-7 py-3.5 rounded-xl font-semibold text-sm border border-white/10 text-slate-300 hover:border-white/20 hover:text-white transition-all duration-200 glass backdrop-blur-sm"
           >
             Our Vision
           </a>
