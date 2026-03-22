@@ -23,14 +23,7 @@ export default function App() {
       </div>
 
       {/* Fluid cursor splashes */}
-      <SplashCursor
-        SPLAT_RADIUS={0.18}
-        SPLAT_FORCE={5000}
-        DENSITY_DISSIPATION={3}
-        VELOCITY_DISSIPATION={1.8}
-        CURL={4}
-        TRANSPARENT={true}
-      />
+      <SplashCursor />
 
       <div className="relative z-10">
         <Navbar />
