@@ -22,24 +22,15 @@ export default function AboutPage() {
     <div>
       {/* Hero */}
       <section className="flex flex-col md:flex-row items-center gap-12 px-4 max-w-6xl mx-auto pt-28 pb-20">
-        {/* Product screenshots grid */}
-        <div className="w-full md:w-[480px] shrink-0 grid grid-cols-2 gap-3">
-          {[
-            { src: '/Images/dashboard.png', alt: 'Dashboard' },
-            { src: '/Images/onboarding.png', alt: 'Onboarding' },
-            { src: '/Images/ai-to-human-interview.png', alt: 'AI Interview' },
-            { src: '/Images/admin-portal.png', alt: 'Admin Portal' },
-          ].map(img => (
-            <div key={img.alt} className="rounded-xl overflow-hidden border border-white/10">
-              <Image
-                src={img.src}
-                alt={img.alt}
-                width={240}
-                height={150}
-                className="w-full object-cover"
-              />
-            </div>
-          ))}
+        {/* Team photo */}
+        <div className="w-full md:w-[480px] shrink-0 rounded-2xl overflow-hidden border border-white/10">
+          <Image
+            src="/Images/people.png"
+            alt="Zelkyrus team"
+            width={480}
+            height={360}
+            className="w-full object-cover"
+          />
         </div>
 
         {/* Content */}

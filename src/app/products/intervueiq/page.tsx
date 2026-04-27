@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, Zap, Users, Brain, BarChart3, Shield, Clock, CheckCircle } from 'lucide-react'
-import GlassIcons from '@/components/GlassIcons'
 
 function Badge({ children }: { children: React.ReactNode }) {
   return (
@@ -168,25 +167,18 @@ export default function IntervueIQPage() {
           <p className="mt-3 text-white/45 max-w-md mx-auto">One platform for recruiters, hiring managers, and candidates.</p>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-12 items-start">
-          <div className="shrink-0">
-            <GlassIcons
-              items={features.map(f => ({
-                icon: <f.icon size={22} />,
-                label: f.title,
-                color: f.color,
-              }))}
-            />
-          </div>
-
-          <div className="flex flex-col gap-4 flex-1">
-            {features.map(f => (
-              <div key={f.title} className="p-5 rounded-xl border border-white/10 glass hover:border-[#2563eb]/30 transition-colors">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {features.map(f => (
+            <div key={f.title} className="p-5 rounded-xl border border-white/10 glass hover:border-[#2563eb]/30 transition-colors flex flex-col gap-3">
+              <div className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0 bg-[#2563eb]/15 border border-[#2563eb]/20 text-[#00d4ff]">
+                <f.icon size={18} />
+              </div>
+              <div>
                 <h3 className="font-semibold text-white mb-1">{f.title}</h3>
                 <p className="text-sm text-white/45 leading-relaxed">{f.desc}</p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </section>
 
