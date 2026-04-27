@@ -48,7 +48,7 @@ export default function Navbar() {
 
           <Link
             href="/products/intervueiq"
-            className="hidden md:block ml-2 px-4 py-1.5 rounded-full bg-[#00d4ff] text-black text-sm font-semibold hover:bg-[#00d4ff]/90 transition-colors whitespace-nowrap"
+            className="hidden md:block ml-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#2563eb] to-[#00d4ff] text-white text-sm font-semibold hover:opacity-90 transition-colors whitespace-nowrap"
           >
             Try IntervueIQ
           </Link>
@@ -80,7 +80,7 @@ export default function Navbar() {
             <Link
               href="/products/intervueiq"
               onClick={() => setOpen(false)}
-              className="mt-2 px-4 py-3 rounded-xl bg-[#00d4ff] text-black text-sm font-semibold text-center"
+              className="mt-2 px-4 py-3 rounded-xl bg-gradient-to-r from-[#2563eb] to-[#00d4ff] text-white text-sm font-semibold text-center"
             >
               Try IntervueIQ
             </Link>

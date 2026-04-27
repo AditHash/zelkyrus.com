@@ -48,7 +48,7 @@ export default function Home() {
         <div className="mt-10 flex items-center gap-4 flex-wrap justify-center">
           <Link
             href="/products/intervueiq"
-            className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#00d4ff] text-black font-semibold hover:bg-[#00d4ff]/90 transition-all"
+            className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#2563eb] to-[#00d4ff] text-white font-semibold hover:opacity-90 transition-all"
           >
             Explore IntervueIQ <ArrowRight className="w-4 h-4" />
           </Link>
@@ -60,12 +60,12 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* Dashboard preview */}
+        {/* IntervueIQ homepage preview */}
         <div className="mt-16 w-full max-w-5xl">
-          <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-[#00d4ff]/5">
+          <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-[#2563eb]/10">
             <Image
-              src="/Images/dashboard.png"
-              alt="IntervueIQ Dashboard"
+              src="/Images/homepage.png"
+              alt="IntervueIQ — AI Interview Platform"
               width={1200}
               height={675}
               className="w-full object-cover"
@@ -83,7 +83,7 @@ export default function Home() {
         </div>
 
         <div className="relative rounded-2xl overflow-hidden border border-white/10 glass-strong p-8 md:p-12">
-          <div className="absolute top-0 left-0 text-[18rem] font-black text-[#00d4ff]/5 leading-none select-none pointer-events-none -translate-x-4 -translate-y-8">
+          <div className="absolute top-0 left-0 text-[18rem] font-black text-[#2563eb]/5 leading-none select-none pointer-events-none -translate-x-4 -translate-y-8">
             I
           </div>
 
@@ -160,7 +160,7 @@ export default function Home() {
           <div className="mt-8 flex items-center justify-center gap-4 flex-wrap">
             <Link
               href="/products/intervueiq"
-              className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#00d4ff] text-black font-semibold hover:bg-[#00d4ff]/90 transition-all"
+              className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#2563eb] to-[#00d4ff] text-white font-semibold hover:opacity-90 transition-all"
             >
               Get Started <ArrowRight className="w-4 h-4" />
             </Link>

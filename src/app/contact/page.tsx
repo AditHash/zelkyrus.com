@@ -121,7 +121,7 @@ export default function ContactPage() {
                   </div>
                   <button
                     type="submit"
-                    className="flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#00d4ff] text-black font-semibold hover:bg-[#00d4ff]/90 transition-all mt-2"
+                    className="flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#2563eb] to-[#00d4ff] text-white font-semibold hover:opacity-90 transition-all mt-2"
                   >
                     Send Message <ArrowRight className="w-4 h-4" />
                   </button>

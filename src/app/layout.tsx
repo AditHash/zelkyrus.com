@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <div className="fixed inset-0 z-0 pointer-events-none">
           <Aurora
-            colorStops={['#00d4ff', '#0ea5e9', '#3b82f6']}
+            colorStops={['#2563eb', '#0ea5e9', '#00d4ff']}
             amplitude={1.2}
             blend={0.5}
             speed={0.4}

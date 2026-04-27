@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Zap, Users, Brain, BarChart3, Shield, Clock } from 'lucide-react'
+import { ArrowRight, Zap, Users, Brain, BarChart3, Shield, Clock, CheckCircle } from 'lucide-react'
 import GlassIcons from '@/components/GlassIcons'
 
 function Badge({ children }: { children: React.ReactNode }) {
@@ -81,44 +81,75 @@ const showcase = [
   },
 ]
 
+const pills = ['AI-Powered', 'Bias-Free', 'Role-Specific', 'Scalable']
+
 export default function IntervueIQPage() {
   return (
     <div>
-      {/* Hero */}
-      <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-4 pt-28 pb-20">
-        <Badge>
-          <span className="w-1.5 h-1.5 rounded-full bg-[#00d4ff] animate-pulse" />
-          IntervueIQ — Now in Beta
-        </Badge>
+      {/* Hero — split layout matching mockup */}
+      <section className="min-h-screen flex items-center px-4 max-w-6xl mx-auto pt-28 pb-20">
+        <div className="flex flex-col md:flex-row gap-12 items-center w-full">
 
-        <h1 className="mt-6 text-5xl md:text-7xl font-bold tracking-tight text-white max-w-4xl leading-tight">
-          Hire Smarter.{' '}
-          <span className="text-gradient">Interview Better.</span>
-        </h1>
+          {/* Left */}
+          <div className="flex-1">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0f172a] border border-[#1e293b] text-[#00d4ff] text-xs font-medium mb-6">
+              AI-POWERED INTERVIEW PLATFORM
+            </div>
 
-        <p className="mt-6 text-lg text-white/50 max-w-xl leading-relaxed">
-          The AI platform that handles both sides of the hiring equation — helping companies find the right people and helping candidates land the right roles.
-        </p>
+            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-5">
+              AI Interviews{' '}
+              <span className="text-gradient">that understand</span>{' '}
+              people, not just resumes.
+            </h1>
 
-        <div className="mt-10 flex items-center gap-4 flex-wrap justify-center">
-          <Link
-            href="/contact"
-            className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#00d4ff] text-black font-semibold hover:bg-[#00d4ff]/90 transition-all"
-          >
-            Request Early Access <ArrowRight className="w-4 h-4" />
-          </Link>
-          <Link
-            href="/contact"
-            className="px-6 py-3 rounded-full border border-white/20 text-white/70 hover:border-white/40 hover:text-white transition-all"
-          >
-            Talk to Sales
-          </Link>
+            <p className="text-white/50 text-lg leading-relaxed mb-8 max-w-lg">
+              Conduct intelligent, bias-free interviews with real-time AI analysis to identify true talent beyond keywords.
+            </p>
+
+            <div className="flex items-center gap-4 flex-wrap mb-6">
+              <Link
+                href="/contact"
+                className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#2563eb] to-[#00d4ff] text-white font-semibold hover:opacity-90 transition-all"
+              >
+                Start AI Interview <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/contact"
+                className="px-6 py-3 rounded-xl border border-[#1e293b] text-white/70 hover:border-white/30 hover:text-white transition-all"
+              >
+                Book a Demo
+              </Link>
+            </div>
+
+            <div className="flex flex-wrap gap-4">
+              {pills.map(p => (
+                <span key={p} className="flex items-center gap-1.5 text-sm text-white/50">
+                  <CheckCircle className="w-4 h-4 text-[#00d4ff]" />
+                  {p}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Right — interview card */}
+          <div className="flex-1 w-full">
+            <div className="rounded-2xl overflow-hidden border border-[#1e293b] bg-[#0f172a]/70 backdrop-blur-sm shadow-2xl shadow-[#2563eb]/10">
+              <Image
+                src="/Images/ai-to-human-interview.png"
+                alt="IntervueIQ AI Interview"
+                width={700}
+                height={440}
+                className="w-full object-cover"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Main dashboard screenshot */}
+      {/* Dashboard screenshot */}
       <section className="px-4 max-w-5xl mx-auto pb-28">
-        <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-[#00d4ff]/5">
+        <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-[#2563eb]/10">
           <Image
             src="/Images/dashboard.png"
             alt="IntervueIQ Dashboard"
@@ -150,7 +181,7 @@ export default function IntervueIQPage() {
 
           <div className="flex flex-col gap-4 flex-1">
             {features.map(f => (
-              <div key={f.title} className="p-5 rounded-xl border border-white/10 glass hover:border-[#00d4ff]/20 transition-colors">
+              <div key={f.title} className="p-5 rounded-xl border border-white/10 glass hover:border-[#2563eb]/30 transition-colors">
                 <h3 className="font-semibold text-white mb-1">{f.title}</h3>
                 <p className="text-sm text-white/45 leading-relaxed">{f.desc}</p>
               </div>
@@ -226,7 +257,7 @@ export default function IntervueIQPage() {
           <div className="mt-8">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#00d4ff] text-black font-semibold hover:bg-[#00d4ff]/90 transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#2563eb] to-[#00d4ff] text-white font-semibold hover:opacity-90 transition-all"
             >
               Request Access <ArrowRight className="w-4 h-4" />
             </Link>
