@@ -1,36 +1,22 @@
-const year = new Date().getFullYear()
+import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/5 py-10">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-        {/* Brand */}
-        <div className="flex items-center gap-3">
-          <img src="/icon.png" alt="Zelkyrus" className="w-7 h-7 object-contain opacity-80" />
-          <div>
-            <img src="/branding-transparent.png" alt="Zelkyrus" className="h-4 object-contain opacity-70" />
-            <div className="text-xs text-slate-500 mt-0.5">Intelligence, Engineered.</div>
-          </div>
-        </div>
-
-        {/* Links */}
-        <nav className="flex items-center gap-6 text-sm text-slate-500">
-          {[
-            { label: 'About', href: '#about' },
-            { label: 'Products', href: '#products' },
-            { label: 'Technology', href: '#tech' },
-            { label: 'Contact', href: '#contact' },
-          ].map((l) => (
-            <a key={l.href} href={l.href} className="hover:text-white transition-colors">
-              {l.label}
-            </a>
-          ))}
-        </nav>
-
-        {/* Copyright */}
-        <p className="text-xs text-slate-600">
-          © {year} Zelkyrus. All rights reserved.
+    <footer className="border-t border-white/5 py-6 px-4">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/40">
+        <p>
+          Built by{' '}
+          <Link href="/about" className="text-white/60 hover:text-white transition-colors underline underline-offset-2">
+            Zelkyrus
+          </Link>{' '}
+          — Intelligence, Engineered.
         </p>
+        <div className="flex items-center gap-6">
+          <Link href="/products/intervueiq" className="hover:text-white transition-colors">IntervueIQ</Link>
+          <Link href="/about" className="hover:text-white transition-colors">About</Link>
+          <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+          <span>© {new Date().getFullYear()} Zelkyrus</span>
+        </div>
       </div>
     </footer>
   )
