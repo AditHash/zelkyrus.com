@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
@@ -20,8 +21,11 @@ export default function Navbar() {
     <>
       <div className="fixed top-5 left-0 right-0 z-50 flex justify-center px-4">
         <nav className="flex items-center gap-1 px-3 py-2 rounded-full glass-strong border border-white/10 shadow-2xl">
-          <Link href="/" className="px-3 py-1 font-bold text-white text-sm tracking-widest mr-2">
-            ZELKYRUS
+          <Link href="/" className="flex items-center gap-2 px-2 py-1 mr-2">
+            <div className="w-7 h-7 rounded-md overflow-hidden bg-white shrink-0 flex items-center justify-center">
+              <Image src="/Images/logo.png" alt="Zelkyrus" width={28} height={28} className="object-contain" />
+            </div>
+            <span className="font-bold text-white text-sm tracking-widest hidden sm:block">ZELKYRUS</span>
           </Link>
 
           <div className="hidden md:flex items-center">

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 
 function Badge({ children }: { children: React.ReactNode }) {
@@ -57,6 +58,20 @@ export default function Home() {
           >
             About Zelkyrus
           </Link>
+        </div>
+
+        {/* Dashboard preview */}
+        <div className="mt-16 w-full max-w-5xl">
+          <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-[#00d4ff]/5">
+            <Image
+              src="/Images/dashboard.png"
+              alt="IntervueIQ Dashboard"
+              width={1200}
+              height={675}
+              className="w-full object-cover"
+              priority
+            />
+          </div>
         </div>
       </section>
 

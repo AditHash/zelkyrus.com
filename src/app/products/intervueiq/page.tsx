@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { ArrowRight, Zap, Users, Brain, BarChart3, Shield, Clock, ImageIcon } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowRight, Zap, Users, Brain, BarChart3, Shield, Clock } from 'lucide-react'
 import GlassIcons from '@/components/GlassIcons'
 
 function Badge({ children }: { children: React.ReactNode }) {
@@ -57,6 +58,29 @@ const steps = [
   { n: 5, title: 'Decide & hire', desc: 'Side-by-side comparisons, data-backed recommendations, and audit trails for every decision.' },
 ]
 
+const showcase = [
+  {
+    src: '/Images/onboarding.png',
+    title: 'Candidate Onboarding',
+    desc: 'Candidates set up in seconds — select role, experience level, and interview type to get a personalised AI session.',
+  },
+  {
+    src: '/Images/ai-to-human-interview.png',
+    title: 'AI Interview Mode',
+    desc: 'Candidates face an AI interviewer that listens, asks follow-ups, and evaluates responses in real time.',
+  },
+  {
+    src: '/Images/human-to-human-interview.png',
+    title: 'Live Interview Assist',
+    desc: 'During human-led interviews, IntervueIQ surfaces suggested questions and analyses the conversation live.',
+  },
+  {
+    src: '/Images/admin-portal.png',
+    title: 'Recruiter Portal',
+    desc: 'Review all interviews, AI scores, and candidate summaries in one organised dashboard.',
+  },
+]
+
 export default function IntervueIQPage() {
   return (
     <div>
@@ -92,12 +116,16 @@ export default function IntervueIQPage() {
         </div>
       </section>
 
-      {/* Product screenshot */}
+      {/* Main dashboard screenshot */}
       <section className="px-4 max-w-5xl mx-auto pb-28">
-        <div className="w-full aspect-video rounded-2xl overflow-hidden border border-white/10 glass-strong flex flex-col items-center justify-center gap-3 text-white/20">
-          {/* Replace with: <Image src="/intervueiq-screenshot.png" alt="IntervueIQ dashboard" fill className="object-cover" /> */}
-          <ImageIcon className="w-10 h-10" />
-          <span className="text-xs">Product screenshot / demo image</span>
+        <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-[#00d4ff]/5">
+          <Image
+            src="/Images/dashboard.png"
+            alt="IntervueIQ Dashboard"
+            width={1200}
+            height={675}
+            className="w-full object-cover"
+          />
         </div>
       </section>
 
@@ -128,6 +156,34 @@ export default function IntervueIQPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Product showcase grid */}
+      <section className="px-4 max-w-5xl mx-auto pb-28">
+        <div className="text-center mb-14">
+          <Badge>In Action</Badge>
+          <h2 className="mt-4 text-3xl md:text-4xl font-bold text-white">See every part of the platform</h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {showcase.map(item => (
+            <div key={item.title} className="rounded-2xl overflow-hidden border border-white/10 glass-strong">
+              <div className="overflow-hidden">
+                <Image
+                  src={item.src}
+                  alt={item.title}
+                  width={600}
+                  height={380}
+                  className="w-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="font-semibold text-white mb-1">{item.title}</h3>
+                <p className="text-sm text-white/45 leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

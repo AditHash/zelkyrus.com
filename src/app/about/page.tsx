@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { ArrowRight, MapPin, ImageIcon } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowRight, MapPin } from 'lucide-react'
 
 function Badge({ children }: { children: React.ReactNode }) {
   return (
@@ -21,11 +22,24 @@ export default function AboutPage() {
     <div>
       {/* Hero */}
       <section className="flex flex-col md:flex-row items-center gap-12 px-4 max-w-6xl mx-auto pt-28 pb-20">
-        {/* Image slot */}
-        <div className="w-full md:w-[480px] shrink-0 aspect-square rounded-2xl overflow-hidden border border-white/10 glass-strong flex flex-col items-center justify-center gap-3 text-white/20">
-          {/* Replace this div with: <Image src="/about.jpg" alt="Zelkyrus team" fill className="object-cover" /> */}
-          <ImageIcon className="w-10 h-10" />
-          <span className="text-xs">Team / company photo</span>
+        {/* Product screenshots grid */}
+        <div className="w-full md:w-[480px] shrink-0 grid grid-cols-2 gap-3">
+          {[
+            { src: '/Images/dashboard.png', alt: 'Dashboard' },
+            { src: '/Images/onboarding.png', alt: 'Onboarding' },
+            { src: '/Images/ai-to-human-interview.png', alt: 'AI Interview' },
+            { src: '/Images/admin-portal.png', alt: 'Admin Portal' },
+          ].map(img => (
+            <div key={img.alt} className="rounded-xl overflow-hidden border border-white/10">
+              <Image
+                src={img.src}
+                alt={img.alt}
+                width={240}
+                height={150}
+                className="w-full object-cover"
+              />
+            </div>
+          ))}
         </div>
 
         {/* Content */}

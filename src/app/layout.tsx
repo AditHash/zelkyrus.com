@@ -11,7 +11,7 @@ const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mon
 export const metadata: Metadata = {
   title: 'Zelkyrus — Intelligence, Engineered.',
   description: 'Zelkyrus builds AI-powered tools for the future of work. IntervueIQ transforms how companies hire and how candidates prepare.',
-  icons: { icon: '/favicon.svg' },
+  icons: { icon: '/favicon.png' },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
