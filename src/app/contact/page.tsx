@@ -147,7 +147,7 @@ export default function ContactPage() {
       {/* What happens next */}
       <section className="bg-[#f5f5f7] dark:bg-[#1c1c1e] py-20 px-5 transition-colors">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div className="rounded-2xl overflow-hidden shadow-product">
+          <div className="rounded-2xl overflow-hidden shadow-product bg-[#f5f5f7] dark:bg-[#1c1c1e]">
             <Image
               src="/Images/team-group.png"
               alt="The Zelkyrus team"

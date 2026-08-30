@@ -119,7 +119,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="rounded-2xl overflow-hidden shadow-product">
+          <div className="rounded-2xl overflow-hidden shadow-product bg-[#f5f5f7] dark:bg-[#1c1c1e]">
             <Image
               src="/Images/hero-desk.png"
               alt="A developer's workspace mid-build"
@@ -174,7 +174,7 @@ export default function Home() {
       {/* Process, paired with a real photo */}
       <section className="py-20 px-5">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div className="rounded-2xl overflow-hidden shadow-product order-2 md:order-1">
+          <div className="rounded-2xl overflow-hidden shadow-product bg-[#f5f5f7] dark:bg-[#1c1c1e] order-2 md:order-1">
             <Image
               src="/Images/office-planning.png"
               alt="Planning a build on a whiteboard"
@@ -223,7 +223,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="rounded-2xl overflow-hidden shadow-product">
+          <div className="rounded-2xl overflow-hidden shadow-product bg-[#f5f5f7] dark:bg-[#1c1c1e]">
             <Image
               src="/Images/team-celebrating.png"
               alt="The team celebrating a shipped release"

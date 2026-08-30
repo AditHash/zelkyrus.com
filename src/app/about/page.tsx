@@ -98,7 +98,7 @@ export default function AboutPage() {
     <div>
       <section className="pt-16 md:pt-24 pb-20 px-5">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div className="rounded-2xl overflow-hidden shadow-product order-2 md:order-1">
+          <div className="rounded-2xl overflow-hidden shadow-product bg-[#f5f5f7] dark:bg-[#1c1c1e] order-2 md:order-1">
             <Image
               src="/Images/team.png"
               alt="The Zelkyrus team"
@@ -161,7 +161,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl overflow-hidden shadow-product">
+          <div className="rounded-2xl overflow-hidden shadow-product bg-[#f5f5f7] dark:bg-[#1c1c1e]">
             <Image
               src="/Images/consulting-desk.png"
               alt="Talking through a project with a client"
