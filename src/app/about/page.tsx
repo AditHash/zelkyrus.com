@@ -16,7 +16,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div className="rounded-2xl overflow-hidden shadow-product order-2 md:order-1">
             <Image
-              src="/Images/people.png"
+              src="/Images/team.png"
               alt="The Zelkyrus team"
               width={900}
               height={700}
@@ -25,15 +25,15 @@ export default function AboutPage() {
           </div>
 
           <div className="order-1 md:order-2">
-            <h1 className="text-[36px] leading-[1.1] md:text-[44px] font-semibold tracking-[-0.02em] text-[#1d1d1f]">
+            <h1 className="text-[36px] leading-[1.1] md:text-[44px] font-semibold tracking-[-0.02em] text-[#1d1d1f] dark:text-white">
               A small studio that turns ideas into shipped products.
             </h1>
-            <div className="flex items-center gap-1.5 mt-4 text-[#6e6e73] text-[14px]">
+            <div className="flex items-center gap-1.5 mt-4 text-[#6e6e73] dark:text-[#a1a1a6] text-[14px]">
               <MapPin size={14} />
               <span>Remote-first</span>
             </div>
 
-            <div className="mt-6 space-y-4 text-[17px] leading-[1.47] text-[#1d1d1f]/75">
+            <div className="mt-6 space-y-4 text-[17px] leading-[1.47] text-[#1d1d1f]/75 dark:text-white/70">
               <p>
                 Zelkyrus started because we kept seeing the same thing: good ideas stuck in decks, slowed down by teams too big to move and too process-heavy to just build.
               </p>
@@ -54,16 +54,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#f5f5f7] py-20 px-5">
+      <section className="bg-[#f5f5f7] dark:bg-[#1c1c1e] py-20 px-5 transition-colors">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-[28px] md:text-[34px] font-semibold tracking-[-0.01em] text-[#1d1d1f] mb-10 text-center">
+          <h2 className="text-[28px] md:text-[34px] font-semibold tracking-[-0.01em] text-[#1d1d1f] dark:text-white mb-10 text-center">
             How we work
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {values.map(v => (
-              <div key={v.title} className="p-6 rounded-2xl bg-white border border-[#d2d2d7]">
-                <h3 className="text-[17px] font-semibold text-[#1d1d1f] mb-2">{v.title}</h3>
-                <p className="text-[14px] leading-relaxed text-[#6e6e73]">{v.desc}</p>
+              <div key={v.title} className="p-6 rounded-2xl bg-white dark:bg-[#2c2c2e] border border-[#d2d2d7] dark:border-white/10">
+                <h3 className="text-[17px] font-semibold text-[#1d1d1f] dark:text-white mb-2">{v.title}</h3>
+                <p className="text-[14px] leading-relaxed text-[#6e6e73] dark:text-[#a1a1a6]">{v.desc}</p>
               </div>
             ))}
           </div>

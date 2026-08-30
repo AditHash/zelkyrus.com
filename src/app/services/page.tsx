@@ -38,10 +38,10 @@ export default function ServicesPage() {
     <div>
       <section className="pt-16 md:pt-24 pb-16 px-5">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-[40px] leading-[1.1] md:text-[48px] font-semibold tracking-[-0.02em] text-[#1d1d1f]">
+          <h1 className="text-[40px] leading-[1.1] md:text-[48px] font-semibold tracking-[-0.02em] text-[#1d1d1f] dark:text-white">
             What we build.
           </h1>
-          <p className="mt-5 text-[17px] leading-[1.47] text-[#1d1d1f]/70 max-w-xl mx-auto">
+          <p className="mt-5 text-[17px] leading-[1.47] text-[#1d1d1f]/70 dark:text-white/60 max-w-xl mx-auto">
             We're a small team, so we stay picky about what we take on, but the range is wide.
           </p>
         </div>
@@ -54,8 +54,10 @@ export default function ServicesPage() {
             return (
               <div
                 key={s.title}
-                className={`rounded-2xl p-8 flex flex-col gap-4 ${
-                  dark ? 'bg-[#1d1d1f] text-white' : 'bg-[#f5f5f7] text-[#1d1d1f]'
+                className={`rounded-2xl p-8 flex flex-col gap-4 border ${
+                  dark
+                    ? 'bg-[#1d1d1f] dark:bg-[#2c2c2e] text-white border-black/5 dark:border-white/10'
+                    : 'bg-[#f5f5f7] dark:bg-[#1c1c1e] text-[#1d1d1f] dark:text-white border-black/5 dark:border-white/10'
                 }`}
               >
                 <div
@@ -67,7 +69,7 @@ export default function ServicesPage() {
                 </div>
                 <div>
                   <h3 className="text-[17px] font-semibold mb-1.5">{s.title}</h3>
-                  <p className={`text-[14px] leading-relaxed ${dark ? 'text-white/60' : 'text-[#6e6e73]'}`}>
+                  <p className={`text-[14px] leading-relaxed ${dark ? 'text-white/60' : 'text-[#6e6e73] dark:text-[#a1a1a6]'}`}>
                     {s.desc}
                   </p>
                 </div>
@@ -79,7 +81,7 @@ export default function ServicesPage() {
                         <div className="w-7 h-7 rounded-full bg-[#0066cc]/10 text-[#0066cc] flex items-center justify-center shrink-0">
                           <item.icon size={13} />
                         </div>
-                        <span className="text-[14px] font-medium text-[#1d1d1f]">{item.label}</span>
+                        <span className="text-[14px] font-medium text-[#1d1d1f] dark:text-white">{item.label}</span>
                       </div>
                     ))}
                   </div>

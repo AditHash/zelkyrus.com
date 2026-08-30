@@ -12,8 +12,6 @@
   }
 
   body {
-    background-color: #ffffff;
-    color: #1d1d1f;
     font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
