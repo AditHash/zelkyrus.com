@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { MapPin, MessageSquare, FileCheck, Hammer, Rocket } from 'lucide-react'
+import { MapPin, MessageSquare, FileCheck, Hammer, Rocket, Database, GitBranch, Search, Sparkles, Zap } from 'lucide-react'
 
 const values = [
   { title: 'AI-native', desc: 'We build with AI at the core when it earns its place, not bolted on for a headline.' },
@@ -16,8 +16,14 @@ const approach = [
   { icon: Rocket, title: 'We stay past launch', desc: 'Shipping is the start of the feedback loop, not the end of the engagement.' },
 ]
 
-// slug is a Simple Icons slug (cdn.simpleicons.org) verified to exist; omit for
-// tools/platforms with no dedicated icon there rather than guess a broken one.
+// Icon sources, in priority order: a Simple Icons slug (cdn.simpleicons.org),
+// or a full Devicon SVG path (jsdelivr), both verified to exist against their
+// official slug lists before use. A handful of real products (OpenAI, Groq,
+// Pinecone) and generic concepts (SQL, CI/CD, RAG) have no public brand icon
+// anywhere, so those use a plain lucide glyph instead of a guessed image.
+const AWS_LOGO = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg'
+const AZURE_LOGO = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-plain.svg'
+
 const stack = [
   {
     category: 'Languages',
@@ -28,7 +34,7 @@ const stack = [
       { name: 'Go', slug: 'go' },
       { name: 'Java', slug: 'openjdk' },
       { name: 'Rust', slug: 'rust' },
-      { name: 'SQL' },
+      { name: 'SQL', lucide: Database },
     ],
   },
   {
@@ -52,37 +58,37 @@ const stack = [
       { name: 'Redis', slug: 'redis' },
       { name: 'Elasticsearch', slug: 'elasticsearch' },
       { name: 'Supabase', slug: 'supabase' },
-      { name: 'Pinecone' },
+      { name: 'Pinecone', lucide: Search },
     ],
   },
   {
     category: 'Cloud & DevOps',
     items: [
-      { name: 'AWS' },
+      { name: 'AWS', img: AWS_LOGO, wordmark: true },
       { name: 'Google Cloud', slug: 'googlecloud' },
-      { name: 'Azure' },
+      { name: 'Azure', img: AZURE_LOGO },
       { name: 'Docker', slug: 'docker' },
       { name: 'Kubernetes', slug: 'kubernetes' },
       { name: 'Terraform', slug: 'terraform' },
       { name: 'GitHub Actions', slug: 'githubactions' },
-      { name: 'CI/CD' },
+      { name: 'CI/CD', lucide: GitBranch },
     ],
   },
   {
     category: 'AI, ML & LLM tooling',
     items: [
       { name: 'Claude', slug: 'anthropic' },
-      { name: 'OpenAI' },
+      { name: 'OpenAI', lucide: Sparkles },
       { name: 'Gemini', slug: 'googlegemini' },
-      { name: 'Groq' },
-      { name: 'AWS Bedrock' },
-      { name: 'Azure AI Foundry' },
-      { name: 'Google Vertex AI' },
+      { name: 'Groq', lucide: Zap },
+      { name: 'AWS Bedrock', img: AWS_LOGO, wordmark: true },
+      { name: 'Azure AI Foundry', img: AZURE_LOGO },
+      { name: 'Google Vertex AI', slug: 'googlecloud' },
       { name: 'LangChain', slug: 'langchain' },
       { name: 'Hugging Face', slug: 'huggingface' },
       { name: 'PyTorch', slug: 'pytorch' },
       { name: 'TensorFlow', slug: 'tensorflow' },
-      { name: 'RAG & vector search' },
+      { name: 'RAG & vector search', lucide: Search },
     ],
   },
 ]
@@ -201,21 +207,20 @@ export default function AboutPage() {
                       className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[13px] font-medium bg-white dark:bg-[#2c2c2e] text-[#1d1d1f] dark:text-white border border-black/5 dark:border-white/10"
                     >
                       {item.slug && (
-                        <>
-                          <img
-                            src={`https://cdn.simpleicons.org/${item.slug}`}
-                            alt=""
-                            aria-hidden="true"
-                            className="w-3.5 h-3.5 dark:hidden"
-                          />
-                          <img
-                            src={`https://cdn.simpleicons.org/${item.slug}/ffffff`}
-                            alt=""
-                            aria-hidden="true"
-                            className="w-3.5 h-3.5 hidden dark:block"
-                          />
-                        </>
+                        <span className="flex items-center justify-center w-4 h-4 rounded-full bg-white shrink-0 overflow-hidden">
+                          <img src={`https://cdn.simpleicons.org/${item.slug}`} alt="" aria-hidden="true" className="w-3 h-3" />
+                        </span>
                       )}
+                      {item.img && (
+                        <span
+                          className={`flex items-center justify-center bg-white shrink-0 overflow-hidden ${
+                            item.wordmark ? 'h-4 w-8 rounded-[3px] px-0.5' : 'w-4 h-4 rounded-full'
+                          }`}
+                        >
+                          <img src={item.img} alt="" aria-hidden="true" className={item.wordmark ? 'w-full h-auto' : 'w-3 h-3'} />
+                        </span>
+                      )}
+                      {item.lucide && <item.lucide size={14} className="text-[#0066cc] shrink-0" />}
                       {item.name}
                     </span>
                   ))}
