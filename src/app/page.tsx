@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Globe as GlobeIcon, Layers, Sparkles, Lightbulb as LightbulbIcon, Users, MessageCircle, DollarSign, Zap } from 'lucide-react'
+import OptionWheel from '@/components/OptionWheel'
 
 const services = [
   {
@@ -72,8 +73,35 @@ export default function Home() {
             <h1 className="text-[40px] leading-[1.1] md:text-[56px] md:leading-[1.07] font-semibold tracking-[-0.02em] text-[#1d1d1f] dark:text-white">
               We build.
             </h1>
+
+            <div className="mt-3 flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+              <span className="text-[15px] text-[#6e6e73] dark:text-[#a1a1a6] shrink-0">
+                Right now, that means
+              </span>
+              <div className="h-[42px] w-[220px] max-w-full relative">
+                <OptionWheel
+                  items={['Websites', 'Full-stack apps', 'GenAI apps', 'Consulting']}
+                  ariaLabel="What we build: Websites, Full-stack apps, GenAI apps, Consulting"
+                  textColor="#8e8e93"
+                  activeColor="#0066cc"
+                  side="left"
+                  fontSize={1.2}
+                  spacing={1.4}
+                  curve={0.6}
+                  tilt={10}
+                  blur={2.5}
+                  fade={0.55}
+                  smoothing={280}
+                  inset={0}
+                  loop
+                  draggable
+                  autoAdvanceMs={2400}
+                />
+              </div>
+            </div>
+
             <p className="mt-5 text-[17px] leading-[1.47] text-[#1d1d1f]/70 dark:text-white/60 max-w-md">
-              A small studio building websites, full-stack applications, and GenAI apps, plus consulting on app development, AI/ML, and DevOps & Cloud.
+              A small, hands-on studio. We scope fast, build in the open, and stay past launch.
             </p>
             <div className="mt-8 flex items-center gap-3">
               <Link
