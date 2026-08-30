@@ -43,10 +43,12 @@ export default function GlassIcons({ items, className }: GlassIconsProps) {
           type="button"
           onClick={item.onClick}
         >
-          <span className="icon-btn__back" style={getBackgroundStyle(item.color)} />
-          <span className="icon-btn__front">
-            <span className="icon-btn__icon" aria-hidden="true">
-              {item.icon}
+          <span className="icon-btn__box">
+            <span className="icon-btn__back" style={getBackgroundStyle(item.color)} />
+            <span className="icon-btn__front">
+              <span className="icon-btn__icon" aria-hidden="true">
+                {item.icon}
+              </span>
             </span>
           </span>
           <span className="icon-btn__label">{item.label}</span>
