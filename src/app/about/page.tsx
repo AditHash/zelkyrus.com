@@ -16,26 +16,74 @@ const approach = [
   { icon: Rocket, title: 'We stay past launch', desc: 'Shipping is the start of the feedback loop, not the end of the engagement.' },
 ]
 
+// slug is a Simple Icons slug (cdn.simpleicons.org) verified to exist; omit for
+// tools/platforms with no dedicated icon there rather than guess a broken one.
 const stack = [
   {
     category: 'Languages',
-    items: ['TypeScript', 'JavaScript', 'Python', 'Go', 'Java', 'SQL', 'Rust'],
+    items: [
+      { name: 'TypeScript', slug: 'typescript' },
+      { name: 'JavaScript', slug: 'javascript' },
+      { name: 'Python', slug: 'python' },
+      { name: 'Go', slug: 'go' },
+      { name: 'Java', slug: 'openjdk' },
+      { name: 'Rust', slug: 'rust' },
+      { name: 'SQL' },
+    ],
   },
   {
     category: 'Frameworks & libraries',
-    items: ['React', 'Next.js', 'Node.js', 'Express', 'Vue', 'FastAPI', 'Django'],
+    items: [
+      { name: 'React', slug: 'react' },
+      { name: 'Next.js', slug: 'nextdotjs' },
+      { name: 'Node.js', slug: 'nodedotjs' },
+      { name: 'Express', slug: 'express' },
+      { name: 'Vue', slug: 'vuedotjs' },
+      { name: 'FastAPI', slug: 'fastapi' },
+      { name: 'Django', slug: 'django' },
+    ],
   },
   {
     category: 'Databases',
-    items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Elasticsearch', 'Pinecone', 'Supabase'],
+    items: [
+      { name: 'PostgreSQL', slug: 'postgresql' },
+      { name: 'MySQL', slug: 'mysql' },
+      { name: 'MongoDB', slug: 'mongodb' },
+      { name: 'Redis', slug: 'redis' },
+      { name: 'Elasticsearch', slug: 'elasticsearch' },
+      { name: 'Supabase', slug: 'supabase' },
+      { name: 'Pinecone' },
+    ],
   },
   {
     category: 'Cloud & DevOps',
-    items: ['AWS', 'Google Cloud', 'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions', 'CI/CD'],
+    items: [
+      { name: 'AWS' },
+      { name: 'Google Cloud', slug: 'googlecloud' },
+      { name: 'Azure' },
+      { name: 'Docker', slug: 'docker' },
+      { name: 'Kubernetes', slug: 'kubernetes' },
+      { name: 'Terraform', slug: 'terraform' },
+      { name: 'GitHub Actions', slug: 'githubactions' },
+      { name: 'CI/CD' },
+    ],
   },
   {
     category: 'AI, ML & LLM tooling',
-    items: ['Claude & GPT APIs', 'LangChain', 'LlamaIndex', 'Hugging Face', 'PyTorch', 'RAG & vector search', 'Model fine-tuning'],
+    items: [
+      { name: 'Claude', slug: 'anthropic' },
+      { name: 'OpenAI' },
+      { name: 'Gemini', slug: 'googlegemini' },
+      { name: 'Groq' },
+      { name: 'AWS Bedrock' },
+      { name: 'Azure AI Foundry' },
+      { name: 'Google Vertex AI' },
+      { name: 'LangChain', slug: 'langchain' },
+      { name: 'Hugging Face', slug: 'huggingface' },
+      { name: 'PyTorch', slug: 'pytorch' },
+      { name: 'TensorFlow', slug: 'tensorflow' },
+      { name: 'RAG & vector search' },
+    ],
   },
 ]
 
@@ -149,10 +197,26 @@ export default function AboutPage() {
                 <div className="flex flex-wrap gap-2.5">
                   {group.items.map(item => (
                     <span
-                      key={item}
-                      className="px-4 py-2 rounded-full text-[13px] font-medium bg-white dark:bg-[#2c2c2e] text-[#1d1d1f] dark:text-white border border-black/5 dark:border-white/10"
+                      key={item.name}
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-[13px] font-medium bg-white dark:bg-[#2c2c2e] text-[#1d1d1f] dark:text-white border border-black/5 dark:border-white/10"
                     >
-                      {item}
+                      {item.slug && (
+                        <>
+                          <img
+                            src={`https://cdn.simpleicons.org/${item.slug}`}
+                            alt=""
+                            aria-hidden="true"
+                            className="w-3.5 h-3.5 dark:hidden"
+                          />
+                          <img
+                            src={`https://cdn.simpleicons.org/${item.slug}/ffffff`}
+                            alt=""
+                            aria-hidden="true"
+                            className="w-3.5 h-3.5 hidden dark:block"
+                          />
+                        </>
+                      )}
+                      {item.name}
                     </span>
                   ))}
                 </div>
