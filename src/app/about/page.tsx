@@ -17,8 +17,26 @@ const approach = [
 ]
 
 const stack = [
-  'TypeScript', 'React', 'Next.js', 'Node.js', 'Python', 'PostgreSQL',
-  'AWS', 'Docker', 'Claude & GPT APIs', 'LangChain', 'Terraform', 'CI/CD',
+  {
+    category: 'Languages',
+    items: ['TypeScript', 'JavaScript', 'Python', 'Go', 'Java', 'SQL', 'Rust'],
+  },
+  {
+    category: 'Frameworks & libraries',
+    items: ['React', 'Next.js', 'Node.js', 'Express', 'Vue', 'FastAPI', 'Django'],
+  },
+  {
+    category: 'Databases',
+    items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Elasticsearch', 'Pinecone', 'Supabase'],
+  },
+  {
+    category: 'Cloud & DevOps',
+    items: ['AWS', 'Google Cloud', 'Docker', 'Kubernetes', 'Terraform', 'GitHub Actions', 'CI/CD'],
+  },
+  {
+    category: 'AI, ML & LLM tooling',
+    items: ['Claude & GPT APIs', 'LangChain', 'LlamaIndex', 'Hugging Face', 'PyTorch', 'RAG & vector search', 'Model fine-tuning'],
+  },
 ]
 
 export default function AboutPage() {
@@ -119,19 +137,26 @@ export default function AboutPage() {
       </section>
 
       {/* Stack */}
-      <section className="bg-[#f5f5f7] dark:bg-[#1c1c1e] py-16 px-5 transition-colors">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-[22px] font-semibold tracking-[-0.01em] text-[#1d1d1f] dark:text-white mb-6">
+      <section className="bg-[#f5f5f7] dark:bg-[#1c1c1e] py-20 px-5 transition-colors">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-[28px] md:text-[34px] font-semibold tracking-[-0.01em] text-[#1d1d1f] dark:text-white mb-10 text-center">
             What we build with
           </h2>
-          <div className="flex flex-wrap justify-center gap-2.5">
-            {stack.map(item => (
-              <span
-                key={item}
-                className="px-4 py-2 rounded-full text-[13px] font-medium bg-white dark:bg-[#2c2c2e] text-[#1d1d1f] dark:text-white border border-black/5 dark:border-white/10"
-              >
-                {item}
-              </span>
+          <div className="flex flex-col gap-8">
+            {stack.map(group => (
+              <div key={group.category}>
+                <h3 className="text-[14px] font-medium text-[#6e6e73] dark:text-[#a1a1a6] mb-3">{group.category}</h3>
+                <div className="flex flex-wrap gap-2.5">
+                  {group.items.map(item => (
+                    <span
+                      key={item}
+                      className="px-4 py-2 rounded-full text-[13px] font-medium bg-white dark:bg-[#2c2c2e] text-[#1d1d1f] dark:text-white border border-black/5 dark:border-white/10"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>
