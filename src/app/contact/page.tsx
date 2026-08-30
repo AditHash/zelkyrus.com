@@ -13,7 +13,7 @@ function Badge({ children }: { children: React.ReactNode }) {
 }
 
 const reasons = [
-  { icon: Building2, color: 'cyan', label: 'Early access to IntervueIQ' },
+  { icon: Building2, color: 'cyan', label: 'Start a new project' },
   { icon: MessageSquare, color: 'sky', label: 'General inquiry' },
   { icon: Mail, color: 'blue', label: 'Partnership or investment' },
 ]
@@ -35,7 +35,7 @@ export default function ContactPage() {
             <Badge>Contact</Badge>
             <h1 className="mt-4 text-4xl md:text-5xl font-bold text-white">Let&apos;s talk</h1>
             <p className="mt-4 text-white/50 max-w-md mx-auto leading-relaxed">
-              Whether you want early access to IntervueIQ, a partnership, or just want to say hi — we&apos;re here.
+              Whether you want to start a project, explore a partnership, or just want to say hi — we&apos;re here.
             </p>
           </div>
 

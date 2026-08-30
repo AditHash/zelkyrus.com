@@ -9,10 +9,10 @@ export default function Footer() {
           <Link href="/about" className="text-white/60 hover:text-white transition-colors underline underline-offset-2">
             Zelkyrus
           </Link>{' '}
-          — Intelligence, Engineered.
+          — We Build.
         </p>
         <div className="flex items-center gap-6">
-          <Link href="/products/intervueiq" className="hover:text-white transition-colors">IntervueIQ</Link>
+          <Link href="/services" className="hover:text-white transition-colors">Services</Link>
           <Link href="/about" className="hover:text-white transition-colors">About</Link>
           <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
           <span>© {new Date().getFullYear()} Zelkyrus</span>

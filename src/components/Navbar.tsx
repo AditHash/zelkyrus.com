@@ -8,7 +8,7 @@ import { Menu, X } from 'lucide-react'
 
 const links = [
   { label: 'Home', href: '/' },
-  { label: 'Products', href: '/products/intervueiq' },
+  { label: 'Services', href: '/services' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ]
@@ -47,10 +47,10 @@ export default function Navbar() {
           </div>
 
           <Link
-            href="/try"
+            href="/contact"
             className="hidden md:block ml-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#2563eb] to-[#00d4ff] text-white text-sm font-semibold hover:opacity-90 transition-colors whitespace-nowrap"
           >
-            Try IntervueIQ
+            Start a Project
           </Link>
 
           <button
@@ -78,11 +78,11 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="/try"
+              href="/contact"
               onClick={() => setOpen(false)}
               className="mt-2 px-4 py-3 rounded-xl bg-gradient-to-r from-[#2563eb] to-[#00d4ff] text-white text-sm font-semibold text-center"
             >
-              Try IntervueIQ
+              Start a Project
             </Link>
           </div>
         </div>

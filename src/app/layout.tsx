@@ -9,8 +9,8 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono' })
 
 export const metadata: Metadata = {
-  title: 'Zelkyrus — Intelligence, Engineered.',
-  description: 'Zelkyrus builds AI-powered tools for the future of work. IntervueIQ transforms how companies hire and how candidates prepare.',
+  title: 'Zelkyrus — We Build.',
+  description: 'Zelkyrus is a small studio that builds websites, products, applications, and GenAI apps — plus technical consulting when you need a second brain.',
   icons: { icon: '/favicon.png' },
 }
 

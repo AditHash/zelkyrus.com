@@ -11,10 +11,10 @@ function Badge({ children }: { children: React.ReactNode }) {
 }
 
 const values = [
-  { title: 'AI-first', desc: 'We build with AI at the core, not as an afterthought.' },
-  { title: 'Outcome-driven', desc: 'Features ship when they create real value for users.' },
-  { title: 'Transparent', desc: 'Candidates and companies both deserve to understand how decisions are made.' },
-  { title: 'Move fast', desc: 'Startups die from slowness. We ship, learn, and iterate relentlessly.' },
+  { title: 'AI-native', desc: 'We build with AI at the core when it earns its place — not bolted on for a headline.' },
+  { title: 'Outcome-driven', desc: 'We ship things that create real value, not features for the sake of a roadmap.' },
+  { title: 'Straight talk', desc: 'You get honest scoping and honest timelines — no agency-speak, no padding.' },
+  { title: 'Move fast', desc: 'Small teams die from slowness too. We ship, learn, and iterate relentlessly.' },
 ]
 
 export default function AboutPage() {
@@ -37,9 +37,8 @@ export default function AboutPage() {
         <div className="flex-1">
           <Badge>About Zelkyrus</Badge>
           <h1 className="mt-4 text-4xl md:text-5xl font-bold text-white leading-tight">
-            We&apos;re building{' '}
-            <span className="text-gradient">intelligent infrastructure</span>{' '}
-            for human work.
+            We&apos;re a small studio that{' '}
+            <span className="text-gradient">turns ideas into shipped products</span>.
           </h1>
           <div className="flex items-center gap-1.5 mt-4 text-white/40 text-sm">
             <MapPin className="w-3.5 h-3.5" />
@@ -48,22 +47,22 @@ export default function AboutPage() {
 
           <div className="mt-6 space-y-4 text-white/55 leading-relaxed">
             <p>
-              Zelkyrus was founded on a simple observation: hiring is broken on both sides. Companies waste weeks on manual screening. Candidates show up to interviews unprepared. Everyone loses time and money.
+              Zelkyrus started because we kept seeing the same thing: good ideas stuck in decks, slowed down by teams too big to move and too process-heavy to just build.
             </p>
             <p>
-              We&apos;re an AI-first company building tools that bring intelligence to the parts of work that matter most. Our flagship product, IntervueIQ, is an end-to-end hiring and interview intelligence platform that makes the entire process smarter — from first application to final offer.
+              We&apos;re a small, hands-on team that builds websites, products, applications, and GenAI apps — end to end. And when you don&apos;t need more code, just a clear technical opinion, we do that too, as consultants.
             </p>
             <p>
-              We believe that better hiring leads to better companies, better careers, and ultimately a better economy. That&apos;s the mission we&apos;re building toward.
+              No account managers, no layers between you and the people actually building. Just a small team with real ownership over what we ship.
             </p>
           </div>
 
           <div className="mt-8 flex items-center gap-4">
             <Link
-              href="/products/intervueiq"
+              href="/services"
               className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#2563eb] to-[#00d4ff] text-white text-sm font-semibold hover:opacity-90 transition-all"
             >
-              See IntervueIQ <ArrowRight className="w-4 h-4" />
+              See our Services <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="/contact"
@@ -97,7 +96,7 @@ export default function AboutPage() {
           <Badge>We&apos;re hiring</Badge>
           <h2 className="mt-4 text-3xl font-bold text-white">Want to build with us?</h2>
           <p className="mt-4 text-white/50 max-w-sm mx-auto leading-relaxed">
-            We&apos;re a small team with big ambitions. If you care about AI and want to shape the future of work, let&apos;s talk.
+            We&apos;re a small team with big ambitions. If you care about building real things and want to move fast, let&apos;s talk.
           </p>
           <div className="mt-8">
             <Link
