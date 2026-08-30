@@ -38,7 +38,7 @@ export default function AboutPage() {
                 Zelkyrus started because we kept seeing the same thing: good ideas stuck in decks, slowed down by teams too big to move and too process-heavy to just build.
               </p>
               <p>
-                We're a small, hands-on team that builds websites, products, applications, and GenAI apps end to end. When you don't need more code, just a clear technical opinion, we do that too, as consultants.
+                We're a small, hands-on team that builds websites, full-stack applications, and GenAI-powered apps end to end. When you need a clear technical opinion instead of more code, we consult on application development, AI/ML & GenAI, and DevOps & Cloud.
               </p>
             </div>
 

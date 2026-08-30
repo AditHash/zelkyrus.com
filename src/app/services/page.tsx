@@ -1,42 +1,35 @@
 import Link from 'next/link'
-import { Globe, Smartphone, Sparkles, Layers, Lightbulb, Wrench } from 'lucide-react'
+import { Globe, Layers, Sparkles, Lightbulb, Code, Brain, Cloud } from 'lucide-react'
 
 const services = [
   {
     icon: Globe,
-    title: 'Websites & marketing sites',
-    desc: 'Fast, no-bloat sites that load quick and say what you actually do.',
+    title: 'Websites',
+    desc: 'Fast, no-bloat marketing sites and web presence that loads quick and says what you do.',
     tile: 'light',
   },
   {
-    icon: Smartphone,
-    title: 'Web & mobile applications',
-    desc: 'Full products, not prototypes. Dashboards, internal tools, customer apps.',
+    icon: Layers,
+    title: 'Full-stack applications',
+    desc: 'Web and mobile applications built end to end, database to UI. Full products, not prototypes.',
     tile: 'dark',
   },
   {
     icon: Sparkles,
-    title: 'GenAI & AI-powered products',
-    desc: 'Agents, copilots, and RAG systems built into the product, not bolted on.',
+    title: 'GenAI-powered apps',
+    desc: 'Agents, copilots, and RAG systems built into the product core, not bolted on after launch.',
     tile: 'dark',
-  },
-  {
-    icon: Layers,
-    title: 'Product design & MVP',
-    desc: 'Idea and nothing else? We scope, design, and ship a real MVP fast.',
-    tile: 'light',
   },
   {
     icon: Lightbulb,
-    title: 'Consulting & technical advisory',
-    desc: 'Architecture reviews, AI strategy, build-vs-buy calls, fractional-CTO guidance.',
-    tile: 'dark',
-  },
-  {
-    icon: Wrench,
-    title: 'Ongoing support',
-    desc: 'Shipped isn\'t done. We stick around for fixes and iteration.',
+    title: 'Consulting',
+    desc: 'Technical advisory across three areas:',
     tile: 'light',
+    subitems: [
+      { icon: Code, label: 'Application development' },
+      { icon: Brain, label: 'AI/ML & GenAI' },
+      { icon: Cloud, label: 'DevOps & Cloud' },
+    ],
   },
 ]
 
@@ -55,7 +48,7 @@ export default function ServicesPage() {
       </section>
 
       <section className="pb-24 px-5">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
           {services.map(s => {
             const dark = s.tile === 'dark'
             return (
@@ -78,6 +71,19 @@ export default function ServicesPage() {
                     {s.desc}
                   </p>
                 </div>
+
+                {s.subitems && (
+                  <div className="mt-1 flex flex-col gap-2.5">
+                    {s.subitems.map(item => (
+                      <div key={item.label} className="flex items-center gap-2.5">
+                        <div className="w-7 h-7 rounded-full bg-[#0066cc]/10 text-[#0066cc] flex items-center justify-center shrink-0">
+                          <item.icon size={13} />
+                        </div>
+                        <span className="text-[14px] font-medium text-[#1d1d1f]">{item.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             )
           })}

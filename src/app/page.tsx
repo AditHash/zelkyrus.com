@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Globe as GlobeIcon, Smartphone, Sparkles, Lightbulb as LightbulbIcon } from 'lucide-react'
+import { Globe as GlobeIcon, Layers, Sparkles, Lightbulb as LightbulbIcon } from 'lucide-react'
 
 const services = [
   {
@@ -9,21 +9,21 @@ const services = [
     tile: 'light',
   },
   {
-    icon: Smartphone,
-    title: 'Products & apps',
-    desc: 'Web and mobile applications, built end to end.',
+    icon: Layers,
+    title: 'Full-stack applications',
+    desc: 'Web and mobile applications built end to end, database to UI.',
     tile: 'dark',
   },
   {
     icon: Sparkles,
-    title: 'GenAI apps',
-    desc: 'Agents, copilots, and automation built into the product.',
+    title: 'GenAI-powered apps',
+    desc: 'Agents, copilots, and AI features built into the product.',
     tile: 'dark',
   },
   {
     icon: LightbulbIcon,
     title: 'Consulting',
-    desc: 'Architecture, AI strategy, and build-vs-buy calls.',
+    desc: 'Application development, AI/ML & GenAI, and DevOps & Cloud.',
     tile: 'light',
   },
 ]
@@ -46,7 +46,7 @@ export default function Home() {
               We build.
             </h1>
             <p className="mt-5 text-[17px] leading-[1.47] text-[#1d1d1f]/70 max-w-md">
-              A small studio that builds websites, products, applications, and GenAI apps, and consults when you need a straight technical opinion.
+              A small studio building websites, full-stack applications, and GenAI apps, plus consulting on app development, AI/ML, and DevOps & Cloud.
             </p>
             <div className="mt-8 flex items-center gap-3">
               <Link
@@ -136,7 +136,7 @@ export default function Home() {
             Ready to build something?
           </h2>
           <p className="mt-3 text-[17px] text-white/60">
-            A website, a product, a GenAI feature, or an hour of advice. We're in.
+            A website, a full-stack app, a GenAI feature, or a consulting call. We're in.
           </p>
           <div className="mt-8">
             <Link

@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
   title: 'Zelkyrus — We Build.',
-  description: 'Zelkyrus is a small studio that builds websites, products, applications, and GenAI apps, plus technical consulting.',
+  description: 'Zelkyrus builds websites, full-stack applications, and GenAI-powered apps, and consults on application development, AI/ML & GenAI, and DevOps & Cloud.',
   icons: { icon: '/favicon.png' },
 }
 
