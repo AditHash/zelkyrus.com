@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Globe, Layers, Sparkles, Lightbulb, Code, Brain, Cloud } from 'lucide-react'
 
 const services = [
@@ -6,24 +7,28 @@ const services = [
     icon: Globe,
     title: 'Websites',
     desc: 'Fast, no-bloat marketing sites and web presence that loads quick and says what you do.',
+    image: '/Images/service-websites.png',
     tile: 'light',
   },
   {
     icon: Layers,
     title: 'Full-stack applications',
     desc: 'Web and mobile applications built end to end, database to UI. Full products, not prototypes.',
+    image: '/Images/service-fullstack.png',
     tile: 'dark',
   },
   {
     icon: Sparkles,
     title: 'GenAI-powered apps',
     desc: 'Agents, copilots, and RAG systems built into the product core, not bolted on after launch.',
+    image: '/Images/service-genai.png',
     tile: 'dark',
   },
   {
     icon: Lightbulb,
     title: 'Consulting',
     desc: 'Technical advisory across three areas:',
+    image: '/Images/service-consulting.png',
     tile: 'light',
     subitems: [
       { icon: Code, label: 'Application development' },
@@ -54,38 +59,44 @@ export default function ServicesPage() {
             return (
               <div
                 key={s.title}
-                className={`rounded-2xl p-8 flex flex-col gap-4 border ${
+                className={`rounded-2xl overflow-hidden flex flex-col border ${
                   dark
                     ? 'bg-[#1d1d1f] dark:bg-[#2c2c2e] text-white border-black/5 dark:border-white/10'
                     : 'bg-[#f5f5f7] dark:bg-[#1c1c1e] text-[#1d1d1f] dark:text-white border-black/5 dark:border-white/10'
                 }`}
               >
-                <div
-                  className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                    dark ? 'bg-white/10 text-white' : 'bg-[#0066cc]/10 text-[#0066cc]'
-                  }`}
-                >
-                  <s.icon size={19} />
-                </div>
-                <div>
-                  <h3 className="text-[17px] font-semibold mb-1.5">{s.title}</h3>
-                  <p className={`text-[14px] leading-relaxed ${dark ? 'text-white/60' : 'text-[#6e6e73] dark:text-[#a1a1a6]'}`}>
-                    {s.desc}
-                  </p>
+                <div className="aspect-[4/3] relative">
+                  <Image src={s.image} alt={s.title} fill className="object-cover" />
                 </div>
 
-                {s.subitems && (
-                  <div className="mt-1 flex flex-col gap-2.5">
-                    {s.subitems.map(item => (
-                      <div key={item.label} className="flex items-center gap-2.5">
-                        <div className="w-7 h-7 rounded-full bg-[#0066cc]/10 text-[#0066cc] flex items-center justify-center shrink-0">
-                          <item.icon size={13} />
-                        </div>
-                        <span className="text-[14px] font-medium text-[#1d1d1f] dark:text-white">{item.label}</span>
-                      </div>
-                    ))}
+                <div className="p-8 flex flex-col gap-4">
+                  <div
+                    className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                      dark ? 'bg-white/10 text-white' : 'bg-[#0066cc]/10 text-[#0066cc]'
+                    }`}
+                  >
+                    <s.icon size={19} />
                   </div>
-                )}
+                  <div>
+                    <h3 className="text-[17px] font-semibold mb-1.5">{s.title}</h3>
+                    <p className={`text-[14px] leading-relaxed ${dark ? 'text-white/60' : 'text-[#6e6e73] dark:text-[#a1a1a6]'}`}>
+                      {s.desc}
+                    </p>
+                  </div>
+
+                  {s.subitems && (
+                    <div className="mt-1 flex flex-col gap-2.5">
+                      {s.subitems.map(item => (
+                        <div key={item.label} className="flex items-center gap-2.5">
+                          <div className="w-7 h-7 rounded-full bg-[#0066cc]/10 text-[#0066cc] flex items-center justify-center shrink-0">
+                            <item.icon size={13} />
+                          </div>
+                          <span className="text-[14px] font-medium text-[#1d1d1f] dark:text-white">{item.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             )
           })}
