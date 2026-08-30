@@ -1,12 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Globe, Layers, Sparkles, Lightbulb, Code, Brain, Cloud } from 'lucide-react'
+import { Globe, Layers, Sparkles, Lightbulb, Code, Brain, Cloud, FileText, Repeat, Clock } from 'lucide-react'
 
 const services = [
   {
     icon: Globe,
     title: 'Websites',
     desc: 'Fast, no-bloat marketing sites and web presence that loads quick and says what you do.',
+    included: ['Marketing sites & landing pages', 'Content and copy structure', 'SEO fundamentals & analytics'],
     image: '/Images/service-websites.png',
     tile: 'light',
   },
@@ -14,6 +15,7 @@ const services = [
     icon: Layers,
     title: 'Full-stack applications',
     desc: 'Web and mobile applications built end to end, database to UI. Full products, not prototypes.',
+    included: ['Web & mobile applications', 'API and database design', 'Auth, payments, integrations'],
     image: '/Images/service-fullstack.png',
     tile: 'dark',
   },
@@ -21,6 +23,7 @@ const services = [
     icon: Sparkles,
     title: 'GenAI-powered apps',
     desc: 'Agents, copilots, and RAG systems built into the product core, not bolted on after launch.',
+    included: ['AI agents & copilots', 'RAG and retrieval pipelines', 'Model selection & evaluation'],
     image: '/Images/service-genai.png',
     tile: 'dark',
   },
@@ -38,6 +41,24 @@ const services = [
   },
 ]
 
+const engagements = [
+  {
+    icon: FileText,
+    title: 'Fixed-scope project',
+    desc: 'A defined build with a fixed quote. You know the scope and the price before we start.',
+  },
+  {
+    icon: Repeat,
+    title: 'Ongoing retainer',
+    desc: 'Continued development or support, billed monthly for a set amount of dedicated time.',
+  },
+  {
+    icon: Clock,
+    title: 'Consulting hours',
+    desc: 'Advisory time on architecture, AI strategy, or DevOps, billed by the hour or in blocks.',
+  },
+]
+
 export default function ServicesPage() {
   return (
     <div>
@@ -47,7 +68,7 @@ export default function ServicesPage() {
             What we build.
           </h1>
           <p className="mt-5 text-[17px] leading-[1.47] text-[#1d1d1f]/70 dark:text-white/60 max-w-xl mx-auto">
-            We're a small team, so we stay picky about what we take on, but the range is wide.
+            We're a small team, so we stay picky about what we take on. These four areas cover most of what clients ask for, from a first website to a full GenAI product.
           </p>
         </div>
       </section>
@@ -84,6 +105,17 @@ export default function ServicesPage() {
                     </p>
                   </div>
 
+                  {s.included && (
+                    <ul className={`flex flex-col gap-1.5 text-[13px] ${dark ? 'text-white/70' : 'text-[#1d1d1f]/80 dark:text-white/70'}`}>
+                      {s.included.map(item => (
+                        <li key={item} className="flex items-start gap-2">
+                          <span className="mt-1.5 w-1 h-1 rounded-full bg-[#0066cc] shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
                   {s.subitems && (
                     <div className="mt-1 flex flex-col gap-2.5">
                       {s.subitems.map(item => (
@@ -100,6 +132,29 @@ export default function ServicesPage() {
               </div>
             )
           })}
+        </div>
+      </section>
+
+      {/* Engagement models */}
+      <section className="bg-[#f5f5f7] dark:bg-[#1c1c1e] py-20 px-5 transition-colors">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-[28px] md:text-[34px] font-semibold tracking-[-0.01em] text-[#1d1d1f] dark:text-white mb-3 text-center">
+            How engagements work.
+          </h2>
+          <p className="text-[15px] text-[#6e6e73] dark:text-[#a1a1a6] text-center max-w-lg mx-auto mb-10">
+            We fit the arrangement to the work, not the other way around.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {engagements.map(e => (
+              <div key={e.title} className="p-6 rounded-2xl bg-white dark:bg-[#2c2c2e] border border-black/5 dark:border-white/10">
+                <div className="w-9 h-9 rounded-full bg-[#0066cc]/10 text-[#0066cc] flex items-center justify-center mb-4">
+                  <e.icon size={17} />
+                </div>
+                <h3 className="text-[16px] font-semibold text-[#1d1d1f] dark:text-white mb-1.5">{e.title}</h3>
+                <p className="text-[14px] leading-relaxed text-[#6e6e73] dark:text-[#a1a1a6]">{e.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

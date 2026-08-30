@@ -1,12 +1,24 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { MapPin } from 'lucide-react'
+import { MapPin, MessageSquare, FileCheck, Hammer, Rocket } from 'lucide-react'
 
 const values = [
   { title: 'AI-native', desc: 'We build with AI at the core when it earns its place, not bolted on for a headline.' },
   { title: 'Outcome-driven', desc: 'We ship things that create real value, not features for the sake of a roadmap.' },
   { title: 'Straight talk', desc: 'Honest scoping and honest timelines. No agency-speak, no padding.' },
   { title: 'Move fast', desc: 'Small teams die from slowness too. We ship, learn, and iterate.' },
+]
+
+const approach = [
+  { icon: MessageSquare, title: 'We listen before we scope', desc: 'A kickoff call is about understanding the actual problem, not pitching a package.' },
+  { icon: FileCheck, title: 'We write the plan down', desc: 'What gets built, in what order, and what "done" looks like, before any code ships.' },
+  { icon: Hammer, title: 'We build in the open', desc: 'You see progress every week. Nothing disappears into a black box until launch day.' },
+  { icon: Rocket, title: 'We stay past launch', desc: 'Shipping is the start of the feedback loop, not the end of the engagement.' },
+]
+
+const stack = [
+  'TypeScript', 'React', 'Next.js', 'Node.js', 'Python', 'PostgreSQL',
+  'AWS', 'Docker', 'Claude & GPT APIs', 'LangChain', 'Terraform', 'CI/CD',
 ]
 
 export default function AboutPage() {
@@ -40,6 +52,9 @@ export default function AboutPage() {
               <p>
                 We're a small, hands-on team that builds websites, full-stack applications, and GenAI-powered apps end to end. When you need a clear technical opinion instead of more code, we consult on application development, AI/ML & GenAI, and DevOps & Cloud.
               </p>
+              <p>
+                We stay deliberately small. Every project gets people who actually write the code, not a layer of account management between you and the work. That's slower to scale, and it's why the work holds up.
+              </p>
             </div>
 
             <div className="mt-8">
@@ -54,17 +69,57 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* How a project actually flows */}
       <section className="bg-[#f5f5f7] dark:bg-[#1c1c1e] py-20 px-5 transition-colors">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-[28px] md:text-[34px] font-semibold tracking-[-0.01em] text-[#1d1d1f] dark:text-white mb-10 text-center">
-            How we work
+            How we actually work together
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {approach.map(a => (
+              <div key={a.title} className="p-6 rounded-2xl bg-white dark:bg-[#2c2c2e] border border-black/5 dark:border-white/10">
+                <div className="w-9 h-9 rounded-full bg-[#0066cc]/10 text-[#0066cc] flex items-center justify-center mb-4">
+                  <a.icon size={17} />
+                </div>
+                <h3 className="text-[16px] font-semibold text-[#1d1d1f] dark:text-white mb-1.5">{a.title}</h3>
+                <p className="text-[14px] leading-relaxed text-[#6e6e73] dark:text-[#a1a1a6]">{a.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="py-20 px-5">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-[28px] md:text-[34px] font-semibold tracking-[-0.01em] text-[#1d1d1f] dark:text-white mb-10 text-center">
+            What that looks like in practice
+          </h2>
+          <div className="divide-y divide-black/10 dark:divide-white/10">
             {values.map(v => (
-              <div key={v.title} className="p-6 rounded-2xl bg-white dark:bg-[#2c2c2e] border border-[#d2d2d7] dark:border-white/10">
-                <h3 className="text-[17px] font-semibold text-[#1d1d1f] dark:text-white mb-2">{v.title}</h3>
+              <div key={v.title} className="py-6 flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-6">
+                <h3 className="text-[16px] font-semibold text-[#1d1d1f] dark:text-white sm:w-44 shrink-0">{v.title}</h3>
                 <p className="text-[14px] leading-relaxed text-[#6e6e73] dark:text-[#a1a1a6]">{v.desc}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stack */}
+      <section className="bg-[#f5f5f7] dark:bg-[#1c1c1e] py-16 px-5 transition-colors">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-[22px] font-semibold tracking-[-0.01em] text-[#1d1d1f] dark:text-white mb-6">
+            What we build with
+          </h2>
+          <div className="flex flex-wrap justify-center gap-2.5">
+            {stack.map(item => (
+              <span
+                key={item}
+                className="px-4 py-2 rounded-full text-[13px] font-medium bg-white dark:bg-[#2c2c2e] text-[#1d1d1f] dark:text-white border border-black/5 dark:border-white/10"
+              >
+                {item}
+              </span>
             ))}
           </div>
         </div>
