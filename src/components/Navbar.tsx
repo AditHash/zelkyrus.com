@@ -55,7 +55,7 @@ export default function Navbar() {
         <div className="md:hidden flex items-center gap-4">
           <ThemeToggle />
           <button
-            className="text-white/80 hover:text-white"
+            className="p-2 -m-2 text-white/80 hover:text-white"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >

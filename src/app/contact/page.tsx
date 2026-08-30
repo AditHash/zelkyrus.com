@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { Mail, MessageSquare, Building2, Check, Send, Calendar, FileText } from 'lucide-react'
 
 const reasons = [
@@ -144,21 +145,35 @@ export default function ContactPage() {
       </div>
 
       {/* What happens next */}
-      <section className="bg-[#f5f5f7] dark:bg-[#1c1c1e] py-16 px-5 transition-colors">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-[22px] font-semibold tracking-[-0.01em] text-[#1d1d1f] dark:text-white mb-8 text-center">
-            What happens after you reach out
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {nextSteps.map((s, i) => (
-              <div key={s.title} className="text-center">
-                <div className="w-9 h-9 rounded-full bg-[#0066cc]/10 text-[#0066cc] flex items-center justify-center mx-auto mb-3">
-                  <s.icon size={17} />
+      <section className="bg-[#f5f5f7] dark:bg-[#1c1c1e] py-20 px-5 transition-colors">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div className="rounded-2xl overflow-hidden shadow-product">
+            <Image
+              src="/Images/team-group.png"
+              alt="The Zelkyrus team"
+              width={900}
+              height={700}
+              className="w-full h-full object-cover aspect-[9/7]"
+            />
+          </div>
+
+          <div>
+            <h2 className="text-[22px] font-semibold tracking-[-0.01em] text-[#1d1d1f] dark:text-white mb-8">
+              What happens after you reach out
+            </h2>
+            <div className="flex flex-col gap-6">
+              {nextSteps.map(s => (
+                <div key={s.title} className="flex gap-4">
+                  <div className="w-9 h-9 rounded-full bg-[#0066cc]/10 text-[#0066cc] flex items-center justify-center shrink-0">
+                    <s.icon size={17} />
+                  </div>
+                  <div>
+                    <h3 className="text-[15px] font-semibold text-[#1d1d1f] dark:text-white mb-1">{s.title}</h3>
+                    <p className="text-[13px] leading-relaxed text-[#6e6e73] dark:text-[#a1a1a6]">{s.desc}</p>
+                  </div>
                 </div>
-                <h3 className="text-[15px] font-semibold text-[#1d1d1f] dark:text-white mb-1">{s.title}</h3>
-                <p className="text-[13px] leading-relaxed text-[#6e6e73] dark:text-[#a1a1a6]">{s.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

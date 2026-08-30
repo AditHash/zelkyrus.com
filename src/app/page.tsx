@@ -177,20 +177,32 @@ export default function Home() {
 
       {/* Why work with us */}
       <section className="bg-[#f5f5f7] dark:bg-[#1c1c1e] py-20 px-5 transition-colors">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-[28px] md:text-[34px] font-semibold tracking-[-0.01em] text-[#1d1d1f] dark:text-white mb-10 max-w-lg">
-            Why work with a small studio.
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {reasons.map(r => (
-              <div key={r.title} className="p-6 rounded-2xl bg-white dark:bg-[#2c2c2e] border border-black/5 dark:border-white/10">
-                <div className="w-9 h-9 rounded-full bg-[#0066cc]/10 text-[#0066cc] flex items-center justify-center mb-4">
-                  <r.icon size={17} />
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 className="text-[28px] md:text-[34px] font-semibold tracking-[-0.01em] text-[#1d1d1f] dark:text-white mb-8 max-w-md">
+              Why work with a small studio.
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {reasons.map(r => (
+                <div key={r.title} className="p-6 rounded-2xl bg-white dark:bg-[#2c2c2e] border border-black/5 dark:border-white/10">
+                  <div className="w-9 h-9 rounded-full bg-[#0066cc]/10 text-[#0066cc] flex items-center justify-center mb-4">
+                    <r.icon size={17} />
+                  </div>
+                  <h3 className="text-[16px] font-semibold text-[#1d1d1f] dark:text-white mb-1.5">{r.title}</h3>
+                  <p className="text-[14px] leading-relaxed text-[#6e6e73] dark:text-[#a1a1a6]">{r.desc}</p>
                 </div>
-                <h3 className="text-[16px] font-semibold text-[#1d1d1f] dark:text-white mb-1.5">{r.title}</h3>
-                <p className="text-[14px] leading-relaxed text-[#6e6e73] dark:text-[#a1a1a6]">{r.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-2xl overflow-hidden shadow-product">
+            <Image
+              src="/Images/team-celebrating.png"
+              alt="The team celebrating a shipped release"
+              width={900}
+              height={700}
+              className="w-full h-full object-cover aspect-[9/7]"
+            />
           </div>
         </div>
       </section>
